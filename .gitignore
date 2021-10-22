@@ -1,0 +1,7 @@
+# Ignore everything
+/*
+
+# But not these files...
+!/.gitignore
+!/readme.md
+!/Stratis%20Aero%20DM.Stratis/

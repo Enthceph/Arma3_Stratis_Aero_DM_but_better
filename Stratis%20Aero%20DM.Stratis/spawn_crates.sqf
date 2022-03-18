@@ -1,4 +1,4 @@
-hint("Происходит обновление ящиков...");
+"===========Происходит обновление ящиков...===========" remoteExec ["systemChat"];
 
 _prefix = "crateSpawnPoint";
 _prefix = toUpper _prefix;
@@ -110,7 +110,7 @@ _itemsToRemove = [
 _radius = 150;	
 
 //Удаление старых ящиков
-systemChat "Удаление старых ящиков";
+"Удаление старых ящиков" remoteExec ["systemChat"];
 {
 
 	_pos = getMarkerPos _x;
@@ -129,7 +129,7 @@ systemChat "Удаление старых ящиков";
 } forEach _cratesSpawnpoints;
 
 //Спавн новых ящиков
-systemChat "Спавн новых ящиков";
+"Спавн новых ящиков" remoteExec ["systemChat"];
 {
 	for[{private _i = 0}, {_i < _cratesPerPoint}, {_i = _i + 1}] do {
 		_pos = getMarkerPos _x;
@@ -203,5 +203,4 @@ systemChat "Спавн новых ящиков";
 	};
 } forEach _cratesSpawnpoints;
 
-
-hint("Обновление ящиков завершено");
+"===========Обновление ящиков завершено===========" remoteExec ["systemChat"];

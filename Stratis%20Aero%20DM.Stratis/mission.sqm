@@ -8,22 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1532;
+		nextID=1554;
 	};
 	class MarkerIDProvider
 	{
-		nextID=20;
+		nextID=23;
 	};
 	class LayerIndexProvider
 	{
-		nextID=92;
+		nextID=100;
 	};
 	class Camera
 	{
-		pos[]={1714.2585,101.52264,5741.7998};
-		dir[]={0.24123128,-0.48876801,-0.83839929};
-		up[]={0.13514931,0.87241375,-0.46971145};
-		aside[]={-0.96101099,0,-0.27651015};
+		pos[]={1594.6401,162.57892,5096.8726};
+		dir[]={0.7566027,-0.36672112,0.5414145};
+		up[]={0.29824927,0.93032223,0.21342112};
+		aside[]={0.58195537,-3.4272671e-007,-0.81325966};
 	};
 };
 binarizationWanted=0;
@@ -90,13 +90,16 @@ addons[]=
 	"A3_Structures_F_Dominants_Lighthouse",
 	"A3_Modules_F_Multiplayer",
 	"A3_Modules_F",
-	"A3_Air_F_Heli_Light_01"
+	"A3_Air_F_Heli_Light_01",
+	"A3_Structures_F_Exp_Infrastructure_Airports",
+	"A3_Modules_F_Sites",
+	"A3_Supplies_F_Enoch_Bags"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=24;
+		items=26;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -265,6 +268,20 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item24
+		{
+			className="A3_Structures_F_Exp_Infrastructure";
+			name="Arma 3 Apex - Infrastructure Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item25
+		{
+			className="A3_Supplies_F_Enoch";
+			name="Arma 3 Enoch - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=9249836;
@@ -350,7 +367,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=230;
+		items=240;
 		class Item0
 		{
 			dataType="Marker";
@@ -606,7 +623,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2098,6.6999998,5627};
+				position[]={1547.2318,5.5042181,4941.6328};
+				angles[]={0.032487731,0,6.2606897};
 			};
 			id=41;
 			type="ModuleTimeMultiplier_F";
@@ -639,18 +657,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2062.3462,8.2796288,5628.1226};
-				angles[]={6.278194,0,0};
+				position[]={2126.355,7.8444557,5658.0405};
+				angles[]={0.0024897563,0,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=49;
 			type="C_Offroad_02_unarmed_F";
-			atlOffset=-0.00059938431;
+			atlOffset=-4.4345856e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -680,18 +697,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2055.0549,8.4387665,5627.4893};
-				angles[]={6.2731848,0,6.2432065};
+				position[]={2060.7646,7.0131564,5831.6201};
+				angles[]={0,3.9456155,6.2806959};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=51;
 			type="C_Quadbike_01_F";
-			atlOffset=-0.0015935898;
+			atlOffset=-0.0012235641;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8033,13 +8049,12 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1608.5814,7.0695963,5067.7368};
+				position[]={1714.6255,7.0695963,5193.3296};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1318;
 			type="C_Offroad_02_unarmed_F";
@@ -8078,7 +8093,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1319;
 			type="C_Quadbike_01_F";
@@ -8111,13 +8125,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1696.853,7.0695963,5332.5522};
+				position[]={1909.4236,7.0695963,5953.8721};
+				angles[]={0,4.0851393,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1320;
 			type="C_Offroad_02_unarmed_F";
@@ -8150,16 +8164,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1689.5618,7.1262865,5331.9189};
+				position[]={1843.8053,6.4616098,5325.6392};
+				angles[]={6.1440897,0,6.2531939};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1321;
 			type="C_Quadbike_01_F";
+			atlOffset=-0.016614914;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8189,13 +8204,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1769.6177,7.0695963,5600.9458};
+				position[]={1730.2762,7.0695963,5610.0566};
+				angles[]={0,1.4346322,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1322;
 			type="C_Offroad_02_unarmed_F";
@@ -8234,7 +8249,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1323;
 			type="C_Quadbike_01_F";
@@ -8267,16 +8281,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1837.6106,7.0695963,5915.8608};
+				position[]={2064.6833,4.5959978,5358.6401};
+				angles[]={6.2731905,0,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1324;
 			type="C_Offroad_02_unarmed_F";
+			atlOffset=-7.7486038e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8312,7 +8327,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1325;
 			type="C_Quadbike_01_F";
@@ -8345,17 +8359,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1939.0039,7.5529628,5497.1665};
-				angles[]={6.278194,0,0.0024897563};
+				position[]={1867.9374,7.2016249,5427.376};
+				angles[]={0.0049914722,0,0.01749678};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1326;
 			type="C_Offroad_02_unarmed_F";
+			atlOffset=-0.00025558472;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8385,17 +8399,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1931.7126,7.5869107,5496.5332};
-				angles[]={6.2806959,0,0.0024897563};
+				position[]={1935.9287,7.2875042,5724.2754};
+				angles[]={6.278194,0,0.0024897563};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				placementRadius=150;
 			};
 			id=1327;
 			type="C_Quadbike_01_F";
+			atlOffset=-6.6757202e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9933,6 +9947,7 @@ class Mission
 			{
 				position[]={1570.323,5.5,4936.9238};
 			};
+			name="vehicle_respawn";
 			id=1516;
 			type="ModuleRespawnVehicle_F";
 			class CustomAttributes
@@ -10104,7 +10119,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="10";
+							value="300";
 						};
 					};
 				};
@@ -10123,7 +10138,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="1";
+							value="0";
 						};
 					};
 				};
@@ -10173,6 +10188,965 @@ class Mission
 			id=1531;
 			type="B_Heli_Light_01_dynamicLoadout_F";
 		};
+		class Item230
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1706.5931,8.0900288,5812.4092};
+				angles[]={0,4.9924669,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=1532;
+			type="Land_Airport_01_hangar_F";
+			atlOffset=-0.036973476;
+		};
+		class Item231
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1643.254,7.39849,5580.5942};
+				angles[]={0,4.9924669,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=1533;
+			type="Land_Airport_01_hangar_F";
+		};
+		class Item232
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1563.8014,8.0954876,5304.6826};
+				angles[]={0,4.9924669,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=1534;
+			type="Land_Airport_01_hangar_F";
+			atlOffset=4.7683716e-007;
+		};
+		class Item233
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2453.4231,21.856773,5328.208};
+				angles[]={0.20699604,2.0708332,0.029984757};
+			};
+			id=1535;
+			type="Site_Minefield";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Site_Minefield_marked";
+					expression="_this setVariable ['marked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Everyone";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="Site_Minefield_side";
+					expression="_this setVariable ['side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Empty";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="Site_Minefield_conditionOfPresence";
+					expression="_this setVariable ['conditionOfPresence',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="TRUE";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="Site_Minefield_minesType";
+					expression="_this setVariable ['minesType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="APERSMine";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="Site_Minefield_minesCount";
+					expression="_this setVariable ['minesCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="800";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="Site_Minefield_axisA";
+					expression="_this setVariable ['axisA',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="600";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="Site_Minefield_axisB";
+					expression="_this setVariable ['axisB',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="100";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="Site_Minefield_shape";
+					expression="_this setVariable ['shape',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="rectangle";
+						};
+					};
+				};
+				nAttributes=8;
+			};
+		};
+		class Item234
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1952.6064,5.9332418,5628.6484};
+				angles[]={6.278194,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				placementRadius=300;
+			};
+			id=1544;
+			type="I_E_Mortar_01_support_F";
+		};
+		class Item235
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1953.6183,5.9328442,5628.5688};
+				angles[]={6.278194,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				placementRadius=300;
+			};
+			id=1545;
+			type="I_E_Mortar_01_Weapon_F";
+		};
+		class Item236
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2647.3049,3.1826236,5795.7329};
+				angles[]={0,0,0.024993116};
+			};
+			id=1550;
+			type="Site_Minefield";
+			atlOffset=2.3841858e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Site_Minefield_marked";
+					expression="_this setVariable ['marked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Everyone";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="Site_Minefield_side";
+					expression="_this setVariable ['side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Empty";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="Site_Minefield_conditionOfPresence";
+					expression="_this setVariable ['conditionOfPresence',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="TRUE";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="Site_Minefield_minesType";
+					expression="_this setVariable ['minesType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="APERSMine";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="Site_Minefield_minesCount";
+					expression="_this setVariable ['minesCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="300";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="Site_Minefield_axisA";
+					expression="_this setVariable ['axisA',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="100";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="Site_Minefield_axisB";
+					expression="_this setVariable ['axisB',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="100";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="Site_Minefield_shape";
+					expression="_this setVariable ['shape',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="ellipse";
+						};
+					};
+				};
+				nAttributes=8;
+			};
+		};
+		class Item237
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2124.6919,2.1687243,4760.1499};
+				angles[]={6.2606878,0,0.079831354};
+			};
+			id=1551;
+			type="Site_Minefield";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Site_Minefield_marked";
+					expression="_this setVariable ['marked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Everyone";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="Site_Minefield_side";
+					expression="_this setVariable ['side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Empty";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="Site_Minefield_conditionOfPresence";
+					expression="_this setVariable ['conditionOfPresence',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="TRUE";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="Site_Minefield_minesType";
+					expression="_this setVariable ['minesType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="APERSMine";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="Site_Minefield_minesCount";
+					expression="_this setVariable ['minesCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="300";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="Site_Minefield_axisA";
+					expression="_this setVariable ['axisA',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="100";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="Site_Minefield_axisB";
+					expression="_this setVariable ['axisB',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="100";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="Site_Minefield_shape";
+					expression="_this setVariable ['shape',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="ellipse";
+						};
+					};
+				};
+				nAttributes=8;
+			};
+		};
+		class Item238
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2141.6558,4.2635717,4868.8047};
+				angles[]={6.0906024,0,0.65303224};
+			};
+			id=1552;
+			type="Site_Minefield";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Site_Minefield_marked";
+					expression="_this setVariable ['marked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="No";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="Site_Minefield_side";
+					expression="_this setVariable ['side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Empty";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="Site_Minefield_conditionOfPresence";
+					expression="_this setVariable ['conditionOfPresence',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="TRUE";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="Site_Minefield_minesType";
+					expression="_this setVariable ['minesType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="APERSMine";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="Site_Minefield_minesCount";
+					expression="_this setVariable ['minesCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="50";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="Site_Minefield_axisA";
+					expression="_this setVariable ['axisA',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="50";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="Site_Minefield_axisB";
+					expression="_this setVariable ['axisB',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="50";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="Site_Minefield_shape";
+					expression="_this setVariable ['shape',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="ellipse";
+						};
+					};
+				};
+				nAttributes=8;
+			};
+		};
+		class Item239
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1562.234,5.5088305,4938.1152};
+			};
+			name="heli_respawn";
+			id=1553;
+			type="ModuleRespawnVehicle_F";
+			atlOffset=4.7683716e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnVehicle_F_ForcedRespawn";
+					expression="_this setVariable ['ForcedRespawn',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnVehicle_F_Init";
+					expression="_this setVariable ['Init',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
+					expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnVehicle_F_DesertedDistance";
+					expression="_this setVariable ['DesertedDistance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1500";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnVehicle_F_PositionType";
+					expression="_this setVariable ['PositionType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleRespawnVehicle_F_RespawnCount";
+					expression="_this setVariable ['RespawnCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleRespawnVehicle_F_Position";
+					expression="_this setVariable ['Position',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleRespawnVehicle_F_Wreck";
+					expression="_this setVariable ['Wreck',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleRespawnVehicle_F_Delay";
+					expression="_this setVariable ['Delay',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="900";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleRespawnVehicle_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				nAttributes=10;
+			};
+		};
 	};
 	class Connections
 	{
@@ -10186,7 +11160,7 @@ class Mission
 			class Item0
 			{
 				linkID=0;
-				item0=1528;
+				item0=51;
 				item1=1516;
 				class CustomData
 				{
@@ -10196,7 +11170,7 @@ class Mission
 			class Item1
 			{
 				linkID=1;
-				item0=1531;
+				item0=1319;
 				item1=1516;
 				class CustomData
 				{
@@ -10206,7 +11180,7 @@ class Mission
 			class Item2
 			{
 				linkID=2;
-				item0=51;
+				item0=1321;
 				item1=1516;
 				class CustomData
 				{
@@ -10216,7 +11190,7 @@ class Mission
 			class Item3
 			{
 				linkID=3;
-				item0=1319;
+				item0=1323;
 				item1=1516;
 				class CustomData
 				{
@@ -10226,7 +11200,7 @@ class Mission
 			class Item4
 			{
 				linkID=4;
-				item0=1321;
+				item0=1325;
 				item1=1516;
 				class CustomData
 				{
@@ -10236,7 +11210,7 @@ class Mission
 			class Item5
 			{
 				linkID=5;
-				item0=1323;
+				item0=1327;
 				item1=1516;
 				class CustomData
 				{
@@ -10246,7 +11220,7 @@ class Mission
 			class Item6
 			{
 				linkID=6;
-				item0=1325;
+				item0=49;
 				item1=1516;
 				class CustomData
 				{
@@ -10256,7 +11230,7 @@ class Mission
 			class Item7
 			{
 				linkID=7;
-				item0=1327;
+				item0=1318;
 				item1=1516;
 				class CustomData
 				{
@@ -10266,7 +11240,7 @@ class Mission
 			class Item8
 			{
 				linkID=8;
-				item0=49;
+				item0=1320;
 				item1=1516;
 				class CustomData
 				{
@@ -10276,7 +11250,7 @@ class Mission
 			class Item9
 			{
 				linkID=9;
-				item0=1318;
+				item0=1322;
 				item1=1516;
 				class CustomData
 				{
@@ -10286,7 +11260,7 @@ class Mission
 			class Item10
 			{
 				linkID=10;
-				item0=1320;
+				item0=1324;
 				item1=1516;
 				class CustomData
 				{
@@ -10296,7 +11270,7 @@ class Mission
 			class Item11
 			{
 				linkID=11;
-				item0=1322;
+				item0=1326;
 				item1=1516;
 				class CustomData
 				{
@@ -10306,8 +11280,8 @@ class Mission
 			class Item12
 			{
 				linkID=12;
-				item0=1324;
-				item1=1516;
+				item0=1528;
+				item1=1553;
 				class CustomData
 				{
 					type="Sync";
@@ -10316,8 +11290,8 @@ class Mission
 			class Item13
 			{
 				linkID=13;
-				item0=1326;
-				item1=1516;
+				item0=1531;
+				item1=1553;
 				class CustomData
 				{
 					type="Sync";

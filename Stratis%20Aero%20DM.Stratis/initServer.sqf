@@ -1,3 +1,16 @@
+//https://www.reddit.com/r/armadev/comments/c67wc7/is_there_a_way_to_disable_the_negative_score_for/
+Fnc_AddScoreHandler = {
+	_this addEventHandler ["HandleScore", {
+	    params["_Unit", "_Object", "_Score"];
+	    
+	    if(isPlayer _Object) then {
+	    	_Unit addPlayerScores [abs _Score, 0, 0, 0, 0];	
+	    };
+
+	    false;
+	}];
+};
+
 execVM "spawn_crates.sqf";
 
 _secInAMinute = 60;											

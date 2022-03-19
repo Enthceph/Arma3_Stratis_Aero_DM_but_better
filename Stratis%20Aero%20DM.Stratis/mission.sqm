@@ -8,22 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1554;
+		nextID=1640;
 	};
 	class MarkerIDProvider
 	{
-		nextID=23;
+		nextID=28;
 	};
 	class LayerIndexProvider
 	{
-		nextID=100;
+		nextID=116;
 	};
 	class Camera
 	{
-		pos[]={1594.6401,162.57892,5096.8726};
-		dir[]={0.7566027,-0.36672112,0.5414145};
-		up[]={0.29824927,0.93032223,0.21342112};
-		aside[]={0.58195537,-3.4272671e-007,-0.81325966};
+		pos[]={2003.2059,31.173626,5753.7363};
+		dir[]={-1.2363449e-007,-0.70710683,0.70710683};
+		up[]={-1.2363449e-007,0.70710671,0.70710683};
+		aside[]={1,0,1.7484557e-007};
 	};
 };
 binarizationWanted=0;
@@ -93,7 +93,9 @@ addons[]=
 	"A3_Air_F_Heli_Light_01",
 	"A3_Structures_F_Exp_Infrastructure_Airports",
 	"A3_Modules_F_Sites",
-	"A3_Supplies_F_Enoch_Bags"
+	"A3_Supplies_F_Enoch_Bags",
+	"A3_Structures_F_EPC_Dominants_GhostHotel",
+	"A3_Static_F_AA_01"
 };
 class AddonsMetaData
 {
@@ -367,7 +369,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=240;
+		items=257;
 		class Item0
 		{
 			dataType="Marker";
@@ -10410,8 +10412,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1952.6064,5.9332418,5628.6484};
-				angles[]={6.278194,0,0};
+				position[]={1977.626,5.8653431,5617.8628};
+				angles[]={0.0024897563,0,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10427,8 +10429,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1953.6183,5.9328442,5628.5688};
-				angles[]={6.278194,0,0};
+				position[]={1986.7996,5.8708034,5615.6787};
+				angles[]={0.0024897563,0,0};
 			};
 			side="Empty";
 			flags=4;
@@ -11146,6 +11148,258 @@ class Mission
 				};
 				nAttributes=10;
 			};
+		};
+		class Item240
+		{
+			dataType="Marker";
+			position[]={1402.7236,-7.6829014,4533.0972};
+			name="crateSpawnPoint_12";
+			type="Empty";
+			id=1554;
+		};
+		class Item241
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1978.9705,5.8310575,5623.7886};
+				angles[]={0.0049914722,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				placementRadius=300;
+			};
+			id=1556;
+			type="I_E_Mortar_01_support_F";
+			atlOffset=4.7683716e-007;
+		};
+		class Item242
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1988.144,5.835989,5621.6045};
+				angles[]={0.0024897563,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				placementRadius=300;
+			};
+			id=1557;
+			type="I_E_Mortar_01_Weapon_F";
+		};
+		class Item243
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1980.1328,5.9979677,5629.2124};
+				angles[]={6.2307329,0,0.032489564};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				placementRadius=300;
+			};
+			id=1558;
+			type="I_E_Mortar_01_support_F";
+			atlOffset=4.7683716e-007;
+		};
+		class Item244
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1989.3064,6.082334,5627.0283};
+				angles[]={6.220767,0,0.010000871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				placementRadius=300;
+			};
+			id=1559;
+			type="I_E_Mortar_01_Weapon_F";
+		};
+		class Item245
+		{
+			dataType="Marker";
+			position[]={1987.146,5.8319998,5622.3159};
+			name="marker_23";
+			text="Детали миномёта";
+			markerType="ELLIPSE";
+			type="ellipse";
+			fillName="Border";
+			a=300;
+			b=300;
+			drawBorder=1;
+			id=1560;
+			atlOffset=-7.5817108e-005;
+		};
+		class Item246
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1548.3796,2.0318468,5318.8916};
+				angles[]={0.022495884,4.9975791,0.09966857};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1574;
+			type="Land_GH_Stairs_F";
+			atlOffset=-1.7591453;
+		};
+		class Item247
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1627.0676,0.95218921,5595.165};
+				angles[]={0.022495884,4.9975791,0.09966857};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1575;
+			type="Land_GH_Stairs_F";
+			atlOffset=-3.3314288;
+		};
+		class Item248
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1691.4072,2.2908094,5826.6353};
+				angles[]={0.022495884,4.9975791,0.09966857};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1576;
+			type="Land_GH_Stairs_F";
+			atlOffset=-2.0097013;
+		};
+		class Item249
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2262.7507,14.203694,5688.0806};
+				angles[]={0,4.9390845,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="this disableTIEquipment true;";
+			};
+			id=1630;
+			type="B_static_AA_F";
+			atlOffset=6.9111032;
+		};
+		class Item250
+		{
+			dataType="Marker";
+			position[]={2262.8491,6.348,5687.938};
+			name="marker_25";
+			text="ПВО";
+			type="mil_circle";
+			colorName="ColorOrange";
+			id=1632;
+			atlOffset=-0.000187397;
+		};
+		class Item251
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1468.6429,5.3782473,4950.9927};
+				angles[]={0.074860021,1.158411,6.278182};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this disableTIEquipment true;";
+			};
+			id=1634;
+			type="B_static_AA_F";
+			atlOffset=-0.00010919571;
+		};
+		class Item252
+		{
+			dataType="Marker";
+			position[]={1468.4847,4.3859844,4951.0879};
+			name="marker_26";
+			text="ПВО";
+			type="mil_circle";
+			colorName="ColorOrange";
+			id=1635;
+		};
+		class Item253
+		{
+			dataType="Marker";
+			position[]={1563.043,5.4109998,5304.7842};
+			name="marker_27";
+			markerType="RECTANGLE";
+			type="rectangle";
+			a=22;
+			b=20;
+			angle=106.24998;
+			id=1636;
+			atlOffset=0.1255579;
+		};
+		class Item254
+		{
+			dataType="Marker";
+			position[]={1642.8931,4.8433371,5580.5225};
+			name="marker_28";
+			markerType="RECTANGLE";
+			type="rectangle";
+			a=22;
+			b=20;
+			angle=106.24998;
+			id=1637;
+			atlOffset=0.1255579;
+		};
+		class Item255
+		{
+			dataType="Marker";
+			position[]={1707.2051,5.5786142,5812.6768};
+			name="marker_29";
+			markerType="RECTANGLE";
+			type="rectangle";
+			a=22;
+			b=20;
+			angle=106.24998;
+			id=1638;
+			atlOffset=0.1255579;
+		};
+		class Item256
+		{
+			dataType="Marker";
+			position[]={1479.093,4.2729998,5014.084};
+			name="marker_30";
+			markerType="RECTANGLE";
+			type="rectangle";
+			a=16;
+			b=9.5;
+			angle=110.696;
+			id=1639;
+			atlOffset=-0.00010728836;
 		};
 	};
 	class Connections

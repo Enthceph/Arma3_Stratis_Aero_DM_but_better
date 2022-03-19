@@ -104,7 +104,17 @@ _itemsToRemove = [
 	"optic_Nightstalker",
 	"H_HelmetO_ghex_F",
 	"H_HelmetO_ViperSP_hex_F",
-	"H_HelmetO_ViperSP_ghex_F"
+	"H_HelmetO_ViperSP_ghex_F",
+	"optic_LRPS",
+	"optic_LRPS_tna_F",
+	"optic_LRPS_ghex_F",
+	"optic_AMS",
+	"optic_AMS_khk",
+	"optic_AMS_snd",
+	"optic_KHS_blk",
+	"optic_KHS_hex",
+	"optic_KHS_old",
+	"optic_KHS_tan"
 ];
 
 _radius = 150;	

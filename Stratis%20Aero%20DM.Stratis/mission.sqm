@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=180;
+		nextID=188;
 	};
 	class Camera
 	{
@@ -12076,7 +12076,7 @@ class Mission
 			angle=4.9585505;
 			class Attributes
 			{
-				onActivation="{    " \n "    systemChat format [    " \n "        ""Player %1 is %2. Pos: %3 Id: %4"",    " \n "        name _x,    " \n "        [""dead"", ""alive""] select alive _x,    " \n "        getPos _x, " \n "        getPlayerID _x " \n "    ];    " \n "    " \n "    private _playerPos = getPos _x;  " \n "    private _entityVelocity;   " \n "    private _entityPos = [    " \n "        (_playerPos select 0),    " \n "        (_playerPos select 1),    " \n "        (_playerPos select 2) + 200    " \n "    ]; " \n " " \n "    private _flareType = switch (getPlayerID _x) do { " \n "        case ""2"": {""F_40mm_Red""}; " \n "        case ""3"": {""F_40mm_Green""}; " \n "        case ""4"": {""F_40mm_Yellow""}; " \n "        case ""5"": {""F_40mm_CIR""}; " \n "        default { ""F_40mm_White"" }; " \n "    }; " \n "    private _flare = _flareType createVehicle _entityPos;    " \n "    _flare setVelocity _entityVelocity; " \n " " \n "    private _smokeType = switch (getPlayerID _x) do { " \n "        case ""2"": {""G_40mm_SmokeRed""}; " \n "        case ""3"": {""G_40mm_SmokeGreen""}; " \n "        case ""4"": {""G_40mm_SmokeYellow""}; " \n "        case ""5"": {""G_40mm_SmokePurple""}; " \n "        default   {""G_40mm_Smoke""}; " \n "    }; " \n "    private _smoke = _smokeType createVehicle _entityPos;    " \n "    _smoke setVelocity _entityVelocity; " \n " " \n " " \n "    systemChat format [    " \n "        ""flareType = %1    smokeType = %2"",    " \n "        _flareType, " \n "        _smokeType " \n "    ];    " \n " " \n "} forEach allPlayers; ";
+				onActivation="{    " \n "    systemChat format [    " \n "        ""Player %1 is %2. Pos: %3 Id: %4"",    " \n "        name _x,    " \n "        [""dead"", ""alive""] select alive _x,    " \n "        getPos _x, " \n "        getPlayerID _x " \n "    ];    " \n "    " \n "    private _playerPos = getPos _x;  " \n "    private _entityPos = [    " \n "        (_playerPos select 0),    " \n "        (_playerPos select 1),    " \n "        (_playerPos select 2) + 200    " \n "    ]; " \n " " \n "    private _flareType = switch (getPlayerID _x) do { " \n "        case ""2"": {""F_40mm_Red""}; " \n "        case ""3"": {""F_40mm_Green""}; " \n "        case ""4"": {""F_40mm_Yellow""}; " \n "        case ""5"": {""F_40mm_CIR""}; " \n "        default { ""F_40mm_White"" }; " \n "    }; " \n "    private _flare = _flareType createVehicle _entityPos;    " \n "    _flare setVelocity [0,0,-25]; " \n " " \n "    private _smokeType = switch (getPlayerID _x) do { " \n "        case ""2"": {""G_40mm_SmokeRed""}; " \n "        case ""3"": {""G_40mm_SmokeGreen""}; " \n "        case ""4"": {""G_40mm_SmokeYellow""}; " \n "        case ""5"": {""G_40mm_SmokePurple""}; " \n "        default   {""G_40mm_Smoke""}; " \n "    }; " \n "    private _smoke = _smokeType createVehicle _entityPos; " \n " " \n "    systemChat format [    " \n "        ""flareType = %1    smokeType = %2"",    " \n "        _flareType, " \n "        _smokeType " \n "    ];    " \n " " \n "} forEach allPlayers; ";
 				sizeA=850;
 				sizeB=500;
 				repeatable=1;

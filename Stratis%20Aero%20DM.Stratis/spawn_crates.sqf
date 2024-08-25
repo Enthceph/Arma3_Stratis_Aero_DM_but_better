@@ -36,9 +36,6 @@ _crates = [
 
 //Предметы для удаления из всех ящиков
 _weaponsToRemove = [
-	"launch_B_Titan_F",
-	"launch_I_Titan_F",
-	"launch_O_Titan_F",
 	"launch_O_Titan_short_F",
 	"launch_B_Titan_short_F",
 	"launch_I_Titan_short_F",
@@ -49,16 +46,10 @@ _weaponsToRemove = [
 	"B_AT_01_weapon_F",
 	"O_AT_01_weapon_F",
 	"I_AT_01_weapon_F",
-	"launch_B_Titan_tna_F",
 	"launch_B_Titan_short_tna_F",
-	"launch_O_Titan_ghex_F",
 	"launch_O_Titan_short_ghex_F",
 	"I_E_AT_01_weapon_F",
 	"I_E_AA_01_weapon_F",
-	"launch_I_Titan_eaf_F",
-	"launch_B_Titan_olive_F",
-	"launch_O_Vorona_brown_F",
-	"launch_O_Vorona_green_F",
 	"srifle_GM6_F",
 	"srifle_GM6_camo_F",
 	"srifle_GM6_ghex_F",

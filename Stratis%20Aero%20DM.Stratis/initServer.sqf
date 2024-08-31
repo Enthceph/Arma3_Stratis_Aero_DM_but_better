@@ -71,7 +71,7 @@ waitUntil {
 		_every10Minutes = round(diag_tickTime) % 600 == 0;
 		if(_every10Minutes) then spawnFlares;
 
-		systemChat format ["diag_tickTime %1", round(diag_tickTime)];
+		// systemChat format ["diag_tickTime %1", round(diag_tickTime)];
 
 		//Уведомление о перезагрузке через 50% времени
 		_half = round(_until - _wait/2);

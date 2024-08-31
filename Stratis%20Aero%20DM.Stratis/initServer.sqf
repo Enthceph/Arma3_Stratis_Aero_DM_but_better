@@ -13,6 +13,51 @@ Fnc_AddScoreHandler = {
 
 execVM "spawn_crates.sqf";
 
+spawnFlares = {
+	{
+		// systemChat format [
+		// 	"Player %1 is %2. Pos: %3 Id: %4",   
+		// 	name _x,   
+		// 	["dead", "alive"] select alive _x,   
+		// 	getPos _x,
+		// 	getPlayerID _x
+		// ];   
+
+		private _playerPos = getPos _x; 
+		private _entityPos = [   
+			(_playerPos select 0),   
+			(_playerPos select 1),   
+			(_playerPos select 2) + 200   
+		];
+
+		private _flareType = switch (getPlayerID _x) do {
+			case "2": {"F_40mm_Red"};
+			case "3": {"F_40mm_Green"};
+			case "4": {"F_40mm_Yellow"};
+			case "5": {"F_40mm_CIR"};
+			default { "F_40mm_White" };
+		};
+		private _flare = _flareType createVehicle _entityPos;   
+		_flare setVelocity [0,0,-20];
+
+		private _smokeType = switch (getPlayerID _x) do {
+			case "2": {"G_40mm_SmokeRed"};
+			case "3": {"G_40mm_SmokeGreen"};
+			case "4": {"G_40mm_SmokeYellow"};
+			case "5": {"G_40mm_SmokePurple"};
+			default   {"G_40mm_Smoke"};
+		};
+		private _smoke = _smokeType createVehicle _entityPos;
+
+		// systemChat format [   
+		// 	"flareType = %1    smokeType = %2",   
+		// 	_flareType,
+		// 	_smokeType
+		// ];
+	} forEach allPlayers;
+};
+
+
 _secInAMinute = 60;											
 _minutes = 30;
 
@@ -22,6 +67,11 @@ waitUntil {
 
 	waitUntil {
 		sleep 1;
+
+		_every10Minutes = round(diag_tickTime) % 600 == 0;
+		if(_every10Minutes) then spawnFlares;
+
+		systemChat format ["diag_tickTime %1", round(diag_tickTime)];
 
 		//Уведомление о перезагрузке через 50% времени
 		_half = round(_until - _wait/2);
@@ -37,9 +87,6 @@ waitUntil {
 			"Перезагрузка ящиков через 1 минуту" remoteExec ["systemChat"];
 		};
 
-		// format ["_until:%1", _until] remoteExec ["systemChat"];
-		// format ["round(diag_tickTime):%1", round(diag_tickTime)] remoteExec ["systemChat"];
-
 		diag_tickTime > _until;
 	};
 	execVM "spawn_crates.sqf";
@@ -49,3 +96,9 @@ waitUntil {
 
 	false; // Loop waitUntil forever
 };
+
+// Define the execution interval in seconds (10 minutes)
+_timeInterval = 10 * 60;
+
+
+

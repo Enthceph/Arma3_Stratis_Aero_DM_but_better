@@ -15,6 +15,7 @@ execVM "spawn_crates.sqf";
 
 spawnFlares = {
 	{
+		format ["Спавн сигнальных ракет"] remoteExec ["systemChat"]; 
 		// systemChat format [
 		// 	"Player %1 is %2. Pos: %3 Id: %4",   
 		// 	name _x,   
@@ -49,6 +50,8 @@ spawnFlares = {
 		};
 		private _smoke = _smokeType createVehicle _entityPos;
 
+		playSound3D ["a3\missions_f_beta\data\sounds\showcase_night\flaregun_4.wss", _x];
+		
 		// systemChat format [   
 		// 	"flareType = %1    smokeType = %2",   
 		// 	_flareType,
@@ -68,10 +71,15 @@ waitUntil {
 	waitUntil {
 		sleep 1;
 
-		_every10Minutes = round(diag_tickTime) % 600 == 0;
-		if(_every10Minutes) then spawnFlares;
+		// format ["Time: %1", round(diag_tickTime)] remoteExec ["systemChat"];
 
-		// systemChat format ["diag_tickTime %1", round(diag_tickTime)];
+		_every9Minutes = round(diag_tickTime) % (10*60) == 540; 
+		if(_every9Minutes) then {
+			format ["Через минуту заспавняться сигнальные ракеты над головой"] remoteExec ["systemChat"];
+		};
+
+		_every10Minutes = round(diag_tickTime) % 10 == 0; 
+		if(_every10Minutes) then spawnFlares;
 
 		//Уведомление о перезагрузке через 50% времени
 		_half = round(_until - _wait/2);

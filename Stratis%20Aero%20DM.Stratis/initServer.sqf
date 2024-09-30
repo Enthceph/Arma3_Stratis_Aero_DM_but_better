@@ -78,7 +78,7 @@ waitUntil {
 			format ["Через минуту заспавняться сигнальные ракеты над головой"] remoteExec ["systemChat"];
 		};
 
-		_every10Minutes = round(diag_tickTime) % 10 == 0; 
+		_every10Minutes = round(diag_tickTime) % 600 == 0; 
 		if(_every10Minutes) then spawnFlares;
 
 		//Уведомление о перезагрузке через 50% времени

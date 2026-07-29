@@ -2,14 +2,25 @@
 Fnc_AddScoreHandler = {
 	_this addEventHandler ["HandleScore", {
 	    params["_Unit", "_Object", "_Score"];
-	    
-	    if(isPlayer _Object) then {
-	    	_Unit addPlayerScores [abs _Score, 0, 0, 0, 0];	
+
+	    //Award a kill only when the killed object is another player (not self).
+	    //abs would turn the death/friendly-fire penalty into a kill, so use a fixed +1.
+	    if(isPlayer _Object && {_Unit != _Object}) then {
+	    	_Unit addPlayerScores [1, 0, 0, 0, 0];
 	    };
 
+	    //Suppress the engine's default (possibly negative) scoring.
 	    false;
 	}];
 };
+
+//Track deaths explicitly on the victim so the K/D scoreboard is correct.
+addMissionEventHandler ["EntityKilled", {
+	params ["_killed", "_killer", "_instigator"];
+	if(isPlayer _killed) then {
+		_killed addPlayerScores [0, 0, 0, 0, 1];
+	};
+}];
 
 execVM "spawn_crates.sqf";
 

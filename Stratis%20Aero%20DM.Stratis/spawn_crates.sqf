@@ -108,6 +108,44 @@ _itemsToRemove = [
 	"optic_KHS_tan"
 ];
 
+//Оставляем только контент из базовой игры и DLC, которыми владеют игроки.
+//AppID DLC игроков: Apex = 395180. Malden/Zeus бесплатны; базовый (не-DLC) контент всегда остаётся.
+DM_OwnedDLCs = ["395180"];
+
+//Разбор результата getAssetDLCInfo -> [isDlc, isOwned, isInstalled, isAvailable, appID, DLCName]
+DM_fnc_isDLCInfoOwned = {
+	params ["_info"];
+	if (count _info < 5) exitWith { true };
+	_info params ["_isDlc", "", "", "", "_appID"];
+	if (!_isDlc) exitWith { true };
+	_appID in DM_OwnedDLCs
+};
+
+//Оружие — класс в CfgWeapons.
+Fnc_IsWeaponOwned = {
+	params ["_class"];
+	[getAssetDLCInfo [_class, configFile >> "CfgWeapons"]] call DM_fnc_isDLCInfoOwned
+};
+
+//Предметы: прицелы/жилеты/головные уборы — класс в CfgWeapons.
+//Униформа (ItemInfo type == 801) хранит DLC на модели персонажа в CfgVehicles.
+Fnc_IsItemOwned = {
+	params ["_class"];
+	private _cfg = configFile >> "CfgWeapons" >> _class;
+	private _info = if (getNumber (_cfg >> "ItemInfo" >> "type") == 801) then {
+		getAssetDLCInfo [getText (_cfg >> "ItemInfo" >> "uniformClass"), configFile >> "CfgVehicles"]
+	} else {
+		getAssetDLCInfo [_class, configFile >> "CfgWeapons"]
+	};
+	[_info] call DM_fnc_isDLCInfoOwned
+};
+
+//Рюкзаки — класс в CfgVehicles.
+Fnc_IsBackpackOwned = {
+	params ["_class"];
+	[getAssetDLCInfo [_class, configFile >> "CfgVehicles"]] call DM_fnc_isDLCInfoOwned
+};
+
 _radius = 150;	
 
 //Удаление старых ящиков
@@ -156,6 +194,11 @@ _radius = 150;
 		_itemsClassNames = _items # 0;
 		_itemsQuantities = _items # 1;
 
+		// Сохраняем копию рюкзаков и их количество
+		_backpacks = getBackpackCargo _holder;
+		_backpacksClassNames = _backpacks # 0;
+		_backpacksQuantities = _backpacks # 1;
+
 
 		// systemChat "===============================";
 		// {
@@ -169,20 +212,44 @@ _radius = 150;
 
 		clearWeaponCargoGlobal _holder;
 		clearItemCargoGlobal _holder;
+		clearBackpackCargoGlobal _holder;
 
-		// Удаляем оружия
+		// Удаляем оружия: из чёрного списка (баланс) и не принадлежащие DLC игроков
+		_keptWeaponClassNames = [];
+		_keptWeaponQuantities = [];
 		{
-			_index = _weaponsClassNames find _x;
-			_weaponsClassNames deleteAt _index;
-			_weaponsQuantities deleteAt _index;
-		} forEach _weaponsToRemove;
+			if (!(_x in _weaponsToRemove) && {[_x] call Fnc_IsWeaponOwned}) then {
+				_keptWeaponClassNames pushBack _x;
+				_keptWeaponQuantities pushBack (_weaponsQuantities # _forEachIndex);
+			};
+		} forEach _weaponsClassNames;
+		_weaponsClassNames = _keptWeaponClassNames;
+		_weaponsQuantities = _keptWeaponQuantities;
 		
-		// Удаляем предметы
+		// Удаляем предметы: из чёрного списка (баланс) и не принадлежащие DLC игроков
+		// (униформа, жилеты, головные уборы и т.п. приходят сюда же)
+		_keptItemClassNames = [];
+		_keptItemQuantities = [];
 		{
-			_index = _itemsClassNames find _x;
-			_itemsClassNames deleteAt _index;
-			_itemsQuantities deleteAt _index;
-		} forEach _itemsToRemove;
+			if (!(_x in _itemsToRemove) && {[_x] call Fnc_IsItemOwned}) then {
+				_keptItemClassNames pushBack _x;
+				_keptItemQuantities pushBack (_itemsQuantities # _forEachIndex);
+			};
+		} forEach _itemsClassNames;
+		_itemsClassNames = _keptItemClassNames;
+		_itemsQuantities = _keptItemQuantities;
+
+		// Удаляем рюкзаки, не принадлежащие DLC игроков
+		_keptBackpackClassNames = [];
+		_keptBackpackQuantities = [];
+		{
+			if ([_x] call Fnc_IsBackpackOwned) then {
+				_keptBackpackClassNames pushBack _x;
+				_keptBackpackQuantities pushBack (_backpacksQuantities # _forEachIndex);
+			};
+		} forEach _backpacksClassNames;
+		_backpacksClassNames = _keptBackpackClassNames;
+		_backpacksQuantities = _keptBackpackQuantities;
 		
 
 		// Добавляем оставщиеся оружия
@@ -193,6 +260,11 @@ _radius = 150;
 		// Добавляем оставщиеся предметы
 		for[{private _y = 0}, {_y < count _itemsClassNames}, {_y = _y + 1}] do {
 			_holder addItemCargoGlobal [_itemsClassNames # _y, _itemsQuantities # _y];
+		};
+
+		// Добавляем оставшиеся рюкзаки
+		for[{private _y = 0}, {_y < count _backpacksClassNames}, {_y = _y + 1}] do {
+			_holder addBackpackCargoGlobal [_backpacksClassNames # _y, _backpacksQuantities # _y];
 		};
 
 

@@ -148,6 +148,50 @@ Fnc_IsBackpackOwned = {
 
 _radius = 150;	
 
+//Доп. контент только из базовой игры для пополнения ящиков после фильтрации DLC
+_extraWeapons = [
+	"arifle_MX_F",
+	"arifle_MXC_F",
+	"arifle_MXM_F",
+	"arifle_MX_SW_F",
+	"arifle_Katiba_F",
+	"arifle_Katiba_C_F",
+	"arifle_TRG21_F",
+	"arifle_TRG20_F",
+	"arifle_Mk20_F",
+	"arifle_Mk20C_F",
+	"arifle_SDAR_F",
+	"SMG_01_F",
+	"SMG_02_F",
+	"LMG_Mk200_F",
+	"LMG_Zafir_F",
+	"hgun_P07_F",
+	"hgun_Rook40_F",
+	"hgun_ACPC2_F",
+	"hgun_Pistol_heavy_01_F",
+	"hgun_Pistol_heavy_02_F",
+	"hgun_PDW2000_F"
+];
+
+_extraUniforms = [
+	"U_B_CombatUniform_mcam",
+	"U_B_CombatUniform_mcam_tshirt",
+	"U_B_CombatUniform_mcam_vest",
+	"U_B_CombatUniform_mcam_worn",
+	"U_O_CombatUniform_ocamo",
+	"U_O_CombatUniform_oucamo",
+	"U_I_CombatUniform",
+	"U_I_CombatUniform_shortsleeve",
+	"U_I_CombatUniform_tshirt",
+	"U_B_Wetsuit",
+	"U_O_Wetsuit",
+	"U_I_Wetsuit"
+];
+
+//Сколько доп. предметов добавлять в каждый ящик
+_extraWeaponsPerCrate = 3;
+_extraUniformsPerCrate = 3;
+
 //Удаление старых ящиков
 "Удаление старых ящиков" remoteExec ["systemChat"];
 {
@@ -267,7 +311,21 @@ _radius = 150;
 			_holder addBackpackCargoGlobal [_backpacksClassNames # _y, _backpacksQuantities # _y];
 		};
 
+		// Добавляем немного доп. оружия (базовая игра) с патронами
+		for[{private _i = 0}, {_i < _extraWeaponsPerCrate}, {_i = _i + 1}] do {
+			_extraWeapon = selectRandom _extraWeapons;
+			_holder addWeaponCargoGlobal [_extraWeapon, 1];
 
+			_compatibleMags = getArray (configFile >> "CfgWeapons" >> _extraWeapon >> "magazines");
+			if (count _compatibleMags > 0) then {
+				_holder addMagazineCargoGlobal [_compatibleMags select 0, 3 + floor random 5];
+			};
+		};
+
+		// Добавляем немного доп. униформы (базовая игра)
+		for[{private _i = 0}, {_i < _extraUniformsPerCrate}, {_i = _i + 1}] do {
+			_holder addItemCargoGlobal [selectRandom _extraUniforms, 1 + floor random 2];
+		};
 
 		// _holder removeWeaponGlobal "arilfe_MX_F";
 		// _holder addWeaponCargo["srifle_EBR_DMS_pointer_snds_F", 1];

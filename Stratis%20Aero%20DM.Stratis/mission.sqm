@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=404;
+		nextID=412;
 	};
 	class Camera
 	{
-		pos[]={1736.4752,129.48398,5959.7617};
-		dir[]={0.75134289,-0.52119261,0.40490404};
-		up[]={0.45881757,0.85343361,0.24726179};
-		aside[]={0.47443005,-1.0994263e-06,-0.88035119};
+		pos[]={3784.5828,26.968231,7935.75};
+		dir[]={-0.040096715,-0.6875484,-0.72512007};
+		up[]={-0.03796047,0.7261411,-0.68649918};
+		aside[]={-0.99854505,-5.7694706e-07,0.05521559};
 	};
 };
 binarizationWanted=0;
@@ -39,6 +39,7 @@ addons[]=
 	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
 	"A3_Weapons_F_Acc",
 	"A3_Weapons_F",
+	"A3_Weapons_F_Items",
 	"A3_Characters_F_Orange_Vests",
 	"A3_Modules_F_Curator_Environment",
 	"A3_Soft_F_Exp_Offroad_02",
@@ -562,6 +563,10 @@ class Mission
 									ammoLeft=11;
 								};
 							};
+							class binocular
+							{
+								name="Binocular";
+							};
 							class uniform
 							{
 								typeName="U_BG_Guerilla1_1";
@@ -576,15 +581,34 @@ class Mission
 										ammoLeft=11;
 									};
 								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=2;
+									};
+								};
 							};
 							class vest
 							{
 								typeName="V_LegStrapBag_coyote_F";
 								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="HandGrenade";
+										count=2;
+										ammoLeft=1;
+									};
+								};
 							};
 							class backpack
 							{
-								typeName="B_Messenger_Coyote_F";
+								typeName="B_Kitbag_cbr";
 								isBackpack=1;
 							};
 							map="ItemMap";
@@ -1594,7 +1618,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1988.7813,6.6875143,5925.2739};
+						position[]={1988.7812,6.6875143,5925.2739};
 						angles[]={0,2.3032413,0};
 					};
 					side="Empty";
@@ -3254,7 +3278,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1841.4089,10.405001,5687.4063};
+						position[]={1841.4089,10.405001,5687.4062};
 						angles[]={0,3.3706663,0};
 					};
 					side="Empty";
@@ -3508,7 +3532,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2102.6563,7.0052042,5569.6738};
+						position[]={2102.6562,7.0052042,5569.6738};
 						angles[]={6.255693,0.19344378,6.2731905};
 					};
 					side="Empty";
@@ -9356,7 +9380,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1760.08,11.725281,5673.9063};
+				position[]={1760.08,11.725281,5673.9062};
 				angles[]={0,5.0751514,0};
 			};
 			side="Empty";
@@ -11774,7 +11798,7 @@ class Mission
 			name="marker_57";
 			type="loc_Tourism";
 			id=1757;
-			atlOffset=0.0024394989;
+			atlOffset=0.0024414062;
 		};
 		class Item325
 		{
@@ -12008,12 +12032,12 @@ class Mission
 				angles[]={0,4.6802244,6.2826972};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=1780;
 			type="O_static_AA_F";
-			atlOffset=2.5248413;
 		};
 		class Item339
 		{
@@ -12064,6 +12088,7 @@ class Mission
 			};
 			id=1783;
 			type="O_static_AA_F";
+			atlOffset=7.6293945e-06;
 		};
 		class Item342
 		{
@@ -12599,7 +12624,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2213.1563,6.6274633,5789.5967};
+				position[]={2213.1562,6.6274633,5789.5967};
 				angles[]={0.0049914722,0,0.010000871};
 			};
 			side="Empty";
@@ -12799,7 +12824,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2070.3823,3.3238735,5984.1563};
+				position[]={2070.3823,3.3238735,5984.1562};
 				angles[]={0,0.20013759,0};
 			};
 			side="Empty";
@@ -12962,7 +12987,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1855.7813,6.5507021,5569.6558};
+				position[]={1855.7812,6.5507021,5569.6558};
 			};
 			side="Empty";
 			flags=4;
@@ -13691,7 +13716,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2152.165,8.1696463,5660.7871};
-				angles[]={-0,1.4274375,0};
+				angles[]={0,1.4274375,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13738,7 +13763,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2027.7975,9.296504,5579.0181};
-				angles[]={-0,0,0.0099949092};
+				angles[]={0,0,0.0099949092};
 			};
 			side="Empty";
 			flags=4;
@@ -13781,6 +13806,7 @@ class Mission
 			};
 			id=1925;
 			type="C_Hatchback_01_sport_F";
+			atlOffset=-0.012251377;
 		};
 		class Item444
 		{
@@ -13788,7 +13814,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1920.5951,7.245492,5864.1167};
-				angles[]={-0,5.0119257,0};
+				angles[]={0,5.0119257,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13804,7 +13830,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1755.8252,7.1115026,5351.8491};
-				angles[]={-0,0.32904655,0};
+				angles[]={0,0.32904655,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13829,6 +13855,7 @@ class Mission
 			};
 			id=1930;
 			type="C_Hatchback_01_sport_F";
+			atlOffset=-0.00030064583;
 		};
 		class Item447
 		{
@@ -13845,6 +13872,7 @@ class Mission
 			};
 			id=1931;
 			type="C_Offroad_01_repair_F";
+			atlOffset=-0.00064659119;
 		};
 		class Item448
 		{
@@ -13852,7 +13880,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1526.1414,6.9501238,5099.4111};
-				angles[]={-0,0.28431976,0};
+				angles[]={0,0.28431976,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13877,6 +13905,7 @@ class Mission
 			};
 			id=1933;
 			type="C_Offroad_01_repair_F";
+			atlOffset=-0.045087814;
 		};
 		class Item450
 		{
@@ -13884,7 +13913,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2125.3953,7.710124,5715.0698};
-				angles[]={-0,1.6961745,0};
+				angles[]={0,1.6961745,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13909,6 +13938,7 @@ class Mission
 			};
 			id=1935;
 			type="C_Offroad_01_repair_F";
+			atlOffset=6.6757202e-05;
 		};
 		class Item452
 		{
@@ -13916,7 +13946,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1736.0774,6.9501238,5527.8765};
-				angles[]={-0,0.28431976,0};
+				angles[]={0,0.28431976,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13932,7 +13962,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1960.2523,7.1133952,5950.6504};
-				angles[]={-0,0.32904655,0.0075011365};
+				angles[]={0,0.32904655,0.0075011365};
 			};
 			side="Empty";
 			flags=4;
@@ -13941,6 +13971,7 @@ class Mission
 			};
 			id=1937;
 			type="C_Offroad_01_repair_F";
+			atlOffset=-4.529953e-05;
 		};
 		class Item454
 		{
@@ -13948,7 +13979,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1697.0616,6.9501238,5053.6138};
-				angles[]={-0,4.899137,0};
+				angles[]={0,4.899137,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13964,7 +13995,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1644.7651,7.1115026,5232.3301};
-				angles[]={-0,0.32904655,0};
+				angles[]={0,0.32904655,0};
 			};
 			side="Empty";
 			flags=4;
